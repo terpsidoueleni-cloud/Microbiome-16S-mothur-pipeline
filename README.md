@@ -41,7 +41,7 @@ Microbiome-16S-mothur-pipeline
 
 ## Requirements
 
-- Linux environment
+- Linux/Windows environment
 - Mothur (v1.44+)
 - SILVA reference database
 
