@@ -1,0 +1,112 @@
+mothur > 
+make.file(inputdir=., type=fastq, prefix=stability)
+Setting input directories to: 
+
+	C:\Users\User\Desktop\DIPLOMATIKI\
+
+
+Output File Names: 
+C:\Users\User\Desktop\DIPLOMATIKI\stability.files
+
+
+mothur > 
+make.contigs(file=stability.files)
+
+Using 4 processors.
+
+>>>>>	Processing file pair F3D0_S188_L001_R1_001.fastq - F3D0_S188_L001_R2_001.fastq (files 1 of 20)	<<<<<
+Making contigs...
+Done.
+
+It took 4 secs to assemble 7793 reads.
+
+---
+Done.
+
+It took 2 secs to assemble 4779 reads.
+
+
+Group count: 
+F3D0	7793
+F3D1	5869
+F3D141	5958
+F3D142	3183
+F3D143	3178
+F3D144	4827
+F3D145	7377
+F3D146	5021
+F3D147	17070
+F3D148	12405
+F3D149	13083
+F3D150	5509
+F3D2	19620
+F3D3	6758
+F3D5	4448
+F3D6	7989
+F3D7	5129
+F3D8	5294
+F3D9	7070
+Mock	4779
+
+Total of all groups is 152360
+
+It took 71 secs to process 152360 sequences.
+
+Output File Names: 
+stability.trim.contigs.fasta
+stability.scrap.contigs.fasta
+stability.contigs_report
+stability.contigs.count_table
+
+
+mothur > 
+summary.seqs(fasta=stability.trim.contigs.fasta, count=stability.contigs.count_table)
+
+Using 4 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	248	248	0	3	1
+2.5%-tile:	1	252	252	0	3	3810
+25%-tile:	1	252	252	0	4	38091
+Median: 	1	252	252	0	4	76181
+75%-tile:	1	253	253	0	5	114271
+97.5%-tile:	1	253	253	6	6	148552
+Maximum:	1	502	502	249	243	152360
+
+Mean:	1	252	252	0	4
+# of unique seqs:	152360
+total # of seqs:	152360
+
+It took 2 secs to summarize 152360 sequences.
+
+Output File Names:
+stability.trim.contigs.summary
+
+
+mothur > 
+screen.seqs(fasta=stability.trim.contigs.fasta, count=stability.contigs.count_table, maxambig=0, maxlength=275, maxhomop=8)
+screen.seqs(fasta=stability.trim.contigs.fasta, count=stability.contigs.count_table, maxambig=0, maxlength=440, maxhomop=8)
+
+
+Using 4 processors.
+
+It took 1 secs to screen 152360 sequences, removed 23495.
+
+/******************************************/
+Running command: remove.seqs(accnos=stability.trim.contigs.bad.accnos.temp, count=stability.contigs.count_table)
+Removed 23495 sequences from stability.contigs.count_table.
+
+Output File Names:
+stability.contigs.pick.count_table
+
+/******************************************/
+
+Output File Names:
+stability.trim.contigs.good.fasta
+stability.trim.contigs.bad.accnos
+stability.contigs.good.count_table
+
+
+It took 5 secs to screen 152360 sequences.
+
+
