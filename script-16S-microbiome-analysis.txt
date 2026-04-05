@@ -1,0 +1,41 @@
+
+#scripts/mothur_commands.txt
+
+```bash
+# Create input file
+make.file(inputdir=., type=fastq, prefix=stability)
+
+# Assemble paired-end reads
+make.contigs(file=stability.files)
+
+# Quality filtering
+screen.seqs(fasta=stability.trim.contigs.fasta, group=stability.contigs.groups, maxambig=0, maxlength=275)
+
+# Dereplication
+unique.seqs(fasta=stability.trim.contigs.good.fasta)
+count.seqs(name=stability.trim.contigs.good.names, group=stability.contigs.good.groups)
+
+# Align to SILVA reference
+align.seqs(fasta=stability.trim.contigs.good.unique.fasta, reference=silva.v4.fasta)
+
+# Alignment filtering
+screen.seqs(fasta=stability.trim.contigs.good.unique.align, count=stability.trim.contigs.good.count_table, start=1968, end=11550)
+filter.seqs(fasta=current, vertical=T, trump=.)
+
+# Pre-clustering and chimera removal
+pre.cluster(fasta=current, count=current, diffs=2)
+chimera.vsearch(fasta=current, count=current, dereplicate=t)
+remove.seqs(fasta=current, accnos=current)
+
+# Abundance filtering
+split.abund(fasta=final.fasta, count=final.count_table, cutoff=1)
+
+# Distance matrix generation
+dist.seqs(fasta=final.abund.fasta, cutoff=0.03)
+
+
+
+
+
+
+
