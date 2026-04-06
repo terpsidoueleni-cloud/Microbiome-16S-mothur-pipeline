@@ -70,6 +70,17 @@ These outputs was used for:
 - Functional annotation
 
 ---
+## Example Results
+
+### Genus abundance heatmap
+
+![Heatmap](Heatmap-example.png)
+
+Example heatmap showing the relative abundance of dominant bacterial taxonomic groups across samples.
+Each cell’s color indicates the abundance of the OTU that contributed to the dissimilarity of the two clusters, 
+based on the Simper analysis. The OTUs are ordered from those with the highest contribution to 
+dissimilarity to those with the lowest. 
+
 
 ## Note
 
