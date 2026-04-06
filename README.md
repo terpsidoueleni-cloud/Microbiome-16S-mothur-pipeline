@@ -72,7 +72,7 @@ These outputs was used for:
 ---
 ## Example Results
 
-### Genus abundance heatmap
+### Bacterial groups' abundance heatmap
 
 ![Heatmap](Heatmap-example.png)
 
